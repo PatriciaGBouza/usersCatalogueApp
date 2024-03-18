@@ -1,0 +1,19 @@
+<section class="container mt-5">
+<div class="row p-3">
+    <div class="col-sm border-black border-end">
+        <img class="rounded-circle" src="{{aUser?.image}}">
+    </div>
+    <div class="col-sm border-black border-start">
+        <div class="text-left pb-3"><h3>{{aUser?.first_name}}</h3></div>
+        <div class="text-left pb-3"><h3>{{aUser?.last_name}}</h3></div>
+        <div class="row pb-3">
+            <div class="text-left col-4 card-title fw-bold">Nombre de usuario:</div> <div class="text-left col-8 card-text">{{aUser?.username}}</div>
+        </div>
+        <div class="row pb-5">
+            <div class="text-left col-4 card-title fw-bold">Email:</div> <div class="text-left col-8 card-text">{{aUser?.email}}</div>
+        </div>
+        <app-buttons-box [parent]="'view'" [idUser]="aUser?._id"/>
+               
+    </div>
+</div>
+</section>

@@ -1,0 +1,27 @@
+<section class="container border">
+     <div class="row p-3">
+        @for (user of usersInfo?.results; track user._id){
+        <article class="col-12 col-md-6 col-lg-3">
+            <app-user-card [myUser]="user"></app-user-card>
+        </article>
+        }@empty {
+            <li>No hay usuarios</li>
+        }
+    </div>
+    <div>
+        <nav>
+            <ul class="pagination pagination-sm">
+            @for (pag of pages;track pag ){
+                 <li class="page-item" >
+                    @if (usersInfo.page==$index+1){
+                        <a class="page-link active" href="#">{{$index+1}}</a>
+                    }@else {
+                        <a class="page-link" href="#">{{$index+1}}</a>
+                    }
+                      
+                </li>
+             }
+            </ul>
+      </nav>
+    </div>
+</section>

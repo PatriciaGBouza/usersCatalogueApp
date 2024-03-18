@@ -1,0 +1,9 @@
+<div class="card box mt-5 container ">
+    <div class="card-title" style="height: 350px;">
+        <img class="card-img img-fluid rounded-circle mb-3" src="{{myUser.image}}">
+        <h1 class="h5 text-center ">{{myUser.first_name}} {{myUser.last_name}} </h1> 
+        
+    </div>
+    <app-buttons-box style="height: 30px;" [parent]="'card'" [idUser]="myUser._id"/>
+   
+</div>

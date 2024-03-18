@@ -1,0 +1,47 @@
+<section class="container border">
+   
+    <form [formGroup]="modelForm" class="p-3" (ngSubmit)="saveFormData()">
+        @if (isEmptyForm){
+            <h2 >NUEVO USUARIO</h2>
+        }@else {
+            <h2 >ACTUALIZAR USUARIO</h2>
+        }
+        
+        <div class="my-2">
+            <label for="first_name" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="first_name" formControlName="first_name"> 
+            @if (validateField('first_name', 'required')){
+                <p class="error"> * Campo requerido </p>
+            }
+        </div>
+        <div class="my-2">
+            <label for="last_name" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" id="last_name" formControlName="last_name"> 
+            @if (validateField('last_name', 'required')){
+                <p class="error"> * Campo requerido </p>
+            }
+        </div>
+        <div class="my-2">
+            <label for="email" class="form-label">Email</label>
+            <input type="text" class="form-control" id="email" formControlName="email"> 
+            @if (validateField('email', 'required')){
+                <p class="error"> * Campo requerido </p>
+            }
+            @if (validateField('email', 'pattern')){
+                <p class="error"> * Campo formato inválido </p>
+            }
+        </div>
+        <div class="my-2">
+            <label for="image" class="form-label">Foto</label>
+            <input type="text" class="form-control"  id="image" formControlName="image"> 
+            @if (validateField('image', 'required')){
+                <p class="error"> * Campo requerido </p>
+            }
+            @if (validateField('image', 'pattern')){
+                <p class="error"> * Campo formato inválido </p>
+            }
+        </div>
+        <input type="submit" value="Guardar" [disabled]="modelForm.invalid" class="btn btn-light">
+
+
+    </form>    
